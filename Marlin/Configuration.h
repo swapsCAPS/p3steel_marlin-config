@@ -213,9 +213,15 @@ Here are some standard links for getting your machine calibrated:
   // #define  DEFAULT_Kd 65.81
 
   // PID tuning for 210C
-  #define  DEFAULT_Kp 25.18
-  #define  DEFAULT_Ki 2.37
-  #define  DEFAULT_Kd 66.83
+  // #define  DEFAULT_Kp 25.18
+  // #define  DEFAULT_Ki 2.37
+  // #define  DEFAULT_Kd 66.83
+  //
+  // PID tuning for 250C with fan on
+  #define  DEFAULT_Kp 20.17
+  #define  DEFAULT_Ki 1.78
+  #define  DEFAULT_Kd 57.00
+
   // MakerGear
   //#define  DEFAULT_Kp 7.0
   //#define  DEFAULT_Ki 0.1
@@ -395,8 +401,8 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 // @section machine
 
 // Travel limits after homing (units are in mm)
-#define X_MIN_POS -20
-#define Y_MIN_POS -20
+#define X_MIN_POS 20
+#define Y_MIN_POS -10
 #define Z_MIN_POS 0
 #define X_MAX_POS 180
 #define Y_MAX_POS 180
@@ -623,7 +629,7 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 // M501 - reads parameters from EEPROM (if you need reset them after you changed them temporarily).
 // M502 - reverts to the default "factory settings".  You still need to store them in EEPROM afterwards if you want to.
 //define this to enable EEPROM support
-//#define EEPROM_SETTINGS // STOFSTIK: enabled
+#define EEPROM_SETTINGS // STOFSTIK: enabled
 
 #if ENABLED(EEPROM_SETTINGS)
   // To disable EEPROM Serial responses and decrease program space by ~1700 byte: comment thisf out:
